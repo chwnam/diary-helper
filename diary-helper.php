@@ -57,7 +57,7 @@ if ( ! function_exists( 'diary_helper_is_login_url' ) ) {
 if ( ! function_exists( 'diary_helper_on_init' ) ) {
 	function diary_helper_on_init() {
 		if ( ! is_admin() && diary_helper_is_protected() && ! diary_helper_is_login_url() ) {
-			wp_safe_redirect( wp_login_url() );
+			wp_safe_redirect( wp_login_url( site_url( $_SERVER['REQUEST_URI'] ?? '' ) ) );
 			exit;
 		}
 	}
