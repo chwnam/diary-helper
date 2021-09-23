@@ -1,1 +1,1 @@
-# diary-helper
+# Diary Helper
