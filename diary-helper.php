@@ -36,7 +36,7 @@ if ( ! function_exists( 'diary_helper_is_protected' ) ) {
 		$in_whitelist = in_array( diary_helper_get_client_ip_address(), diary_helper_get_whitelist(), true );
 		$is_logged_in = is_user_logged_in();
 
-		return ! $in_whitelist && ! $is_logged_in;
+		return ! ( $in_whitelist || $is_logged_in );
 	}
 }
 
